@@ -1,0 +1,10 @@
+{
+  "name": "kiransundar-hospital-management",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A polished hospital management dashboard and patient portal",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}

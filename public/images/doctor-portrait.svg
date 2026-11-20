@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title">
+  <title id="title">Illustrated doctor portrait</title>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#fff0e3"/><stop offset="1" stop-color="#f4d0b4"/></linearGradient>
+    <linearGradient id="coat" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#e8e7e4"/></linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="36" fill="url(#bg)"/>
+  <circle cx="200" cy="154" r="75" fill="#bd8264"/>
+  <path d="M126 152q-8-87 74-88 84 2 76 100-23-8-43-51-36 37-107 39z" fill="#39302c"/>
+  <path d="M82 400q8-147 117-155 106 9 119 155z" fill="url(#coat)"/>
+  <path d="M165 246l36 57 37-57" fill="#f3eee8"/>
+  <path d="M157 262q48 37 91 0" fill="none" stroke="#e66e27" stroke-width="9"/>
+  <path d="M200 266q-25 73 18 105" fill="none" stroke="#4a4742" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="217" cy="370" r="12" fill="#ed6b16"/>
+  <path d="M82 400h237" stroke="#dd6b27" stroke-width="10"/>
+  <circle cx="320" cy="74" r="23" fill="#fff" opacity=".72"/>
+  <path d="M320 62v24M308 74h24" stroke="#ed6b16" stroke-width="6" stroke-linecap="round"/>
+</svg>

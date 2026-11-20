@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f4f2" />
+    <meta name="description" content="KIRANSUNDAR Hospital — thoughtful care, beautifully connected." />
+    <title>KIRANSUNDAR Hospital — Patient care, connected</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css?v=3" />
+  </head>
+  <body>
+    <main class="auth-screen" id="authScreen">
+      <section class="auth-card" aria-labelledby="loginTitle">
+        <a class="brand auth-brand" href="#" aria-label="KIRANSUNDAR Hospital home">
+          <span class="brand-mark"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M15.1 5.5h5.8v9.6h9.6v5.8h-9.6v9.6h-5.8v-9.6H5.5v-5.8h9.6z" fill="currentColor"/></svg></span>
+          <span class="brand-name">KIRANSUNDAR<span class="brand-dot">.</span><small>HOSPITAL &amp; WELLNESS</small></span>
+        </a>
+        <div class="auth-image"><img class="auth-image-photo" src="/images/hospital-room.svg" alt="" /><span>KINDNESS IN EVERY MOMENT</span></div>
+        <div class="auth-copy">
+          <div class="eyebrow"><span class="live-dot"></span> <span id="authEyebrow">STAFF &amp; ADMIN ACCESS</span></div>
+          <h1 id="loginTitle">Care begins with you.</h1>
+          <p id="loginDescription">Sign in to your KIRANSUNDAR workspace.</p>
+        </div>
+        <div class="auth-tabs" id="authTabs" role="tablist" aria-label="Choose sign-in type">
+          <button type="button" class="auth-tab active" data-auth-mode="admin" role="tab" aria-selected="true">Staff login</button>
+          <button type="button" class="auth-tab" data-auth-mode="patient" role="tab" aria-selected="false">Patient login</button>
+        </div>
+        <form id="loginForm" class="login-form">
+          <label>Email address<input name="email" type="email" autocomplete="username" placeholder="you@example.com" required /></label>
+          <label>Password<input name="password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="12" required /></label>
+          <p class="auth-error" id="loginError" role="alert"></p>
+          <button class="button button-primary login-submit" type="submit">Sign in securely <span>→</span></button>
+        </form>
+        <form id="registerForm" class="login-form" hidden>
+          <label>Full name<input name="name" autocomplete="name" placeholder="Your full name" minlength="2" maxlength="100" required /></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+          <label>Phone number <span class="optional-label">Optional</span><input name="phone" type="tel" autocomplete="tel" placeholder="+1 (555) 000-0000" maxlength="40" /></label>
+          <label>Password<input name="password" type="password" autocomplete="new-password" placeholder="At least 12 characters" minlength="12" maxlength="1024" required /></label>
+          <p class="auth-error" id="registerError" role="alert"></p>
+          <button class="button button-primary login-submit" type="submit">Create patient account <span>→</span></button>
+        </form>
+        <p class="auth-switch" id="registerPrompt" hidden>New to KIRANSUNDAR? <button type="button" id="showRegister">Create a patient account</button></p>
+        <p class="auth-switch" id="loginPrompt" hidden>Already have an account? <button type="button" id="showLogin">Sign in</button></p>
+        <p class="auth-note">Your health and privacy matter to us.</p>
+      </section>
+      <p class="auth-footer">© <span id="authYear"></span> KIRANSUNDAR Hospital</p>
+    </main>
+    <div class="app-shell" id="appShell" hidden>
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="KIRANSUNDAR Hospital home">
+          <span class="brand-mark"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M15.1 5.5h5.8v9.6h9.6v5.8h-9.6v9.6h-5.8v-9.6H5.5v-5.8h9.6z" fill="currentColor"/></svg></span>
+          <span class="brand-name">KIRANSUNDAR<span class="brand-dot">.</span><small>HOSPITAL &amp; WELLNESS</small></span>
+        </a>
+        <div class="workspace-label">WORKSPACE</div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-link active" data-page="overview"><span class="nav-icon" data-icon="grid"></span><span>Overview</span></button>
+          <button class="nav-link" data-page="appointments"><span class="nav-icon" data-icon="calendar"></span><span>Appointments</span><span class="nav-count">8</span></button>
+          <button class="nav-link" data-page="patients"><span class="nav-icon" data-icon="users"></span><span>Patients</span></button>
+          <button class="nav-link" data-page="doctors"><span class="nav-icon" data-icon="stethoscope"></span><span>Doctors</span></button>
+          <button class="nav-link patient-nav" data-page="health" hidden><span class="nav-icon" data-icon="chart"></span><span>Health dashboard</span></button>
+          <button class="nav-link patient-nav" data-page="history" hidden><span class="nav-icon" data-icon="download"></span><span>Medical history</span></button>
+          <button class="nav-link patient-nav" data-page="consultation" hidden><span class="nav-icon" data-icon="users"></span><span>Online consultation</span></button>
+          <button class="nav-link patient-nav" data-page="reminders" hidden><span class="nav-icon" data-icon="bell"></span><span>Medicine reminders</span></button>
+          <button class="nav-link patient-nav" data-page="reports" hidden><span class="nav-icon" data-icon="chart"></span><span>Health reports</span></button>
+          <button class="nav-link patient-nav" data-page="payments" hidden><span class="nav-icon" data-icon="building"></span><span>Payments</span></button>
+        </nav>
+        <div class="sidebar-divider"></div>
+        <div class="workspace-label">MANAGEMENT</div>
+        <nav class="main-nav" aria-label="Management navigation">
+          <button class="nav-link" data-page="departments"><span class="nav-icon" data-icon="building"></span><span>Departments</span></button>
+          <button class="nav-link" data-page="reports"><span class="nav-icon" data-icon="chart"></span><span>Reports</span></button>
+        </nav>
+        <div class="sidebar-spacer"></div>
+        <div class="help-card">
+          <span class="help-symbol"><span></span><span></span><span></span></span>
+          <div class="help-title">Need a hand?</div>
+          <p>Our team is here to help you.</p>
+          <button id="supportButton">Contact support <span>↗</span></button>
+        </div>
+        <button class="nav-link settings-link" data-page="settings"><span class="nav-icon" data-icon="settings"></span><span>Settings</span></button>
+        <div class="profile-card">
+          <img class="profile-avatar" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=100&q=80" data-fallback="/images/doctor-portrait.svg" alt="" />
+          <div class="profile-copy"><strong id="profileName">Hospital Administrator</strong><span id="profileRole">Administrator</span></div>
+          <button class="icon-button profile-menu" id="logoutButton" aria-label="Sign out" title="Sign out"><span class="nav-icon" data-icon="logout"></span></button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="icon-button mobile-menu" id="mobileMenu" aria-label="Open menu"><span class="nav-icon" data-icon="menu"></span></button>
+          <div class="breadcrumb"><span>Pages</span><span class="breadcrumb-slash">/</span><strong id="breadcrumbCurrent">Overview</strong></div>
+          <div class="topbar-actions">
+            <label class="search-box"><span class="nav-icon" data-icon="search"></span><input id="globalSearch" type="search" placeholder="Search anything..." autocomplete="off" /><kbd>⌘ K</kbd></label>
+            <button class="icon-button notification-button" aria-label="Notifications"><span class="nav-icon" data-icon="bell"></span><i></i></button>
+            <button class="button button-outline patient-logout" id="patientLogoutButton" type="button" hidden><span class="nav-icon" data-icon="logout"></span> Sign out</button>
+          </div>
+        </header>
+
+        <section class="page-content" id="pageContent">
+          <div class="page-heading">
+            <div><div class="eyebrow"><span class="live-dot"></span> YOUR HOSPITAL, TODAY</div><h1>Good morning, Olivia <span class="wave">✳</span></h1><p>Here’s what’s happening at your hospital today.</p></div>
+            <div class="heading-actions"><button class="button button-outline" id="exportButton"><span class="nav-icon" data-icon="download"></span> Export report</button><button class="button button-primary" id="newAppointment"><span>＋</span> New appointment</button></div>
+          </div>
+
+          <div class="hero-banner">
+            <div class="hero-copy"><div class="hero-kicker"><span class="hero-star">✳</span> KIRANSUNDAR · CARE WITH HEART</div><h2>Every patient deserves<br />to feel cared for.</h2><p>Modern medicine, with a warmer touch.</p><button class="hero-link" data-page="appointments">Explore today’s schedule <span>↗</span></button></div>
+            <div class="hero-image" role="img" aria-label="Bright, modern hospital room prepared for patient care"><img src="/images/hospital-room.svg" alt="" /></div>
+            <div class="hero-shape"></div>
+          </div>
+
+          <section class="care-gallery" aria-label="Care at KIRANSUNDAR">
+            <article class="gallery-card gallery-one"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&amp;fit=crop&amp;w=600&amp;q=85" data-fallback="/images/hospital-room.svg" alt="Peaceful, sunlit hospital room" loading="lazy" /><div><span>OUR HOSPITAL</span><h2>A calmer place to heal.</h2></div></article>
+            <article class="gallery-card gallery-two"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&amp;fit=crop&amp;w=600&amp;q=85" data-fallback="/images/care-team.svg" alt="Doctor listening attentively to a patient" loading="lazy" /><div><span>PERSONAL CARE</span><h2>Time to listen. Care that sees you.</h2></div></article>
+            <article class="gallery-card gallery-three"><img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&amp;fit=crop&amp;w=600&amp;q=85" data-fallback="/images/care-team.svg" alt="Modern medical team working together" loading="lazy" /><div><span>EXPERT TEAM</span><h2>Here for every step.</h2></div></article>
+          </section>
+
+          <div class="stats-grid" id="statsGrid">
+            <article class="stat-card"><div class="stat-top"><span class="stat-label">Total patients</span><span class="stat-icon mint"><span class="nav-icon" data-icon="users"></span></span></div><div class="stat-value" id="patientStat">—</div><div class="stat-foot"><span class="trend positive">↗ 12.8%</span><span>vs. last month</span><div class="sparkline spark-one"></div></div></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-label">Appointments today</span><span class="stat-icon peach"><span class="nav-icon" data-icon="calendar"></span></span></div><div class="stat-value" id="appointmentStat">—</div><div class="stat-foot"><span class="trend positive">↗ 8.2%</span><span>vs. yesterday</span><div class="sparkline spark-two"></div></div></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-label">Available doctors</span><span class="stat-icon blue"><span class="nav-icon" data-icon="stethoscope"></span></span></div><div class="stat-value" id="doctorStat">—<small> / 32</small></div><div class="stat-foot"><span class="status-online"><i></i> 18 on duty</span><span>today</span><div class="sparkline spark-three"></div></div></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-label">Bed occupancy</span><span class="stat-icon green"><span class="nav-icon" data-icon="bed"></span></span></div><div class="stat-value">78<small>%</small></div><div class="stat-foot"><span class="trend neutral">Healthy range</span><span>of 240 beds</span><div class="sparkline spark-four"></div></div></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel appointments-panel">
+              <div class="panel-header"><div><h2>Today’s appointments</h2><p>Your schedule at a glance</p></div><button class="text-button" data-page="appointments">View all <span>→</span></button></div>
+              <div class="table-wrap"><table><thead><tr><th>PATIENT</th><th>DOCTOR</th><th>TIME</th><th>STATUS</th><th></th></tr></thead><tbody id="appointmentRows"></tbody></table></div>
+              <div class="panel-footer"><span id="appointmentFooter">Showing today’s appointments</span><button class="pagination-button" aria-label="More appointments">•••</button></div>
+            </section>
+            <section class="panel department-panel">
+              <div class="panel-header"><div><h2>Department overview</h2><p>Patient visits by department</p></div><button class="icon-button small-icon" aria-label="More options"><span class="nav-icon" data-icon="more"></span></button></div>
+              <div class="department-chart"><div class="donut-chart"><div class="donut-inner"><strong>135</strong><span>visits</span></div></div><div class="chart-legend"><span><i class="legend-dot dot-teal"></i>Cardiology <b>48</b></span><span><i class="legend-dot dot-sage"></i>Neurology <b>36</b></span><span><i class="legend-dot dot-peach"></i>Pediatrics <b>29</b></span><span><i class="legend-dot dot-mint"></i>Orthopedics <b>22</b></span></div></div>
+              <div class="dept-list" id="departmentList"></div>
+              <button class="department-link" data-page="departments">View all departments <span>→</span></button>
+            </section>
+          </div>
+          <div class="bottom-grid">
+            <section class="panel doctors-panel"><div class="panel-header"><div><h2>On-duty doctors</h2><p>Your care team is ready</p></div><button class="text-button" data-page="doctors">View all <span>→</span></button></div><div class="doctor-strip" id="doctorStrip"></div></section>
+            <section class="quote-card"><span class="quote-mark">“</span><p>At KIRANSUNDAR, every act of care begins with a person — not a condition.</p><span class="quote-credit">OUR PROMISE TO YOU</span><div class="quote-decoration">✳</div></section>
+          </div>
+          <footer class="page-footer"><span>© 2026 KIRANSUNDAR Hospital</span><span><i></i> All systems operational</span></footer>
+        </section>
+      </main>
+    </div>
+    <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+    <aside class="kiran-assistant" id="kiranAssistant" aria-label="Naan Ungal Kiran patient assistant" hidden>
+      <section class="kiran-chat" id="kiranChat" aria-labelledby="kiranTitle" hidden>
+        <header class="kiran-chat-header">
+          <div class="kiran-avatar" aria-hidden="true">K</div>
+          <div><h2 id="kiranTitle">Naan Ungal Kiran</h2><p>Your patient portal assistant</p></div>
+          <button class="icon-button" id="closeKiranChat" type="button" aria-label="Close assistant">×</button>
+        </header>
+        <div class="kiran-chat-notice">I can help you use the portal. I can’t diagnose symptoms or replace a clinician. For an emergency, call your local emergency number now.</div>
+        <div class="kiran-messages" id="kiranMessages" role="log" aria-live="polite" aria-relevant="additions">
+          <p class="kiran-message kiran-bot">Vanakkam! I’m Naan Ungal Kiran. How can I help with your care today?</p>
+        </div>
+        <div class="kiran-quick-actions" id="kiranQuickActions">
+          <button type="button" data-kiran-action="appointments">My appointments</button>
+          <button type="button" data-kiran-action="reminders">Medicine reminders</button>
+          <button type="button" data-kiran-action="consultation">Request consultation</button>
+        </div>
+        <form class="kiran-chat-form" id="kiranChatForm">
+          <label class="sr-only" for="kiranMessageInput">Message Naan Ungal Kiran</label>
+          <input id="kiranMessageInput" name="message" maxlength="500" placeholder="Type a message..." autocomplete="off" required />
+          <button class="button button-primary" type="submit">Send</button>
+        </form>
+      </section>
+      <button class="kiran-launcher" id="kiranLauncher" type="button" aria-expanded="false" aria-controls="kiranChat">
+        <span class="kiran-launcher-icon" aria-hidden="true">✳</span><span>Ask Kiran</span>
+      </button>
+    </aside>
+    <div class="modal-backdrop" id="modalBackdrop" hidden>
+      <section class="appointment-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="icon-button modal-close" id="closeModal" aria-label="Close"><span class="nav-icon" data-icon="close"></span></button>
+        <div class="modal-eyebrow"><span class="live-dot"></span> CARE, MADE SIMPLE</div>
+        <h2 id="modalTitle">Book an appointment</h2><p class="modal-description" id="modalDescription">Choose a time that works for your patient.</p>
+        <form id="appointmentForm">
+          <div id="bookingPatientFields">
+            <label>Patient name<input name="patient" placeholder="Full name" required /></label>
+            <div class="form-row"><label>Email address<input name="email" type="email" placeholder="you@example.com" /></label><label>Phone number<input name="phone" type="tel" placeholder="+1 (555) 000-0000" /></label></div>
+          </div>
+          <p class="patient-booking-note" id="patientBookingNote" hidden>Your booking will be linked to your KIRANSUNDAR patient account.</p>
+          <label>Choose a specialist<select name="doctorId" id="doctorSelect" required></select></label>
+          <div class="form-row"><label>Date<input name="date" type="date" required /></label><label>Time<select name="time" required><option value="">Select a time</option><option>09:00</option><option>09:30</option><option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option><option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option></select></label></div>
+          <button class="button button-primary modal-submit" type="submit">Confirm appointment <span>→</span></button>
+        </form>
+        <div class="modal-note"><span>♡</span> Your health information is always treated with care.</div>
+      </section>
+    </div>
+    <script src="/app.js?v=3" defer></script>
+  </body>
+</html>
